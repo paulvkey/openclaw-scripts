@@ -1,3 +1,4 @@
-bin/
+/bin/*
+!/bin/download-latest-release.sh
 *.dmg
 *.pkg
