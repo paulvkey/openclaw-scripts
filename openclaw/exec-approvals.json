@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "defaults": {
+    "security": "full",
+    "ask": "off"
+  },
+  "agents": {
+    "crestodian": {
+      "ask": "off",
+      "security": "full"
+    },
+    "main": {
+      "ask": "on-miss",
+      "security": "full"
+    }
+  }
+}
