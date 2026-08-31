@@ -119,7 +119,7 @@ V=3.13.15; P="/Library/Frameworks/Python.framework/Versions/${V%.*}"; [ "$($P/bi
 curl -fsSL https://openclaw.ai/install.sh | bash
 # 如果想要重新配置相关内容，执行openclaw onboard --install-daemon
 
-V=2026.7.1; [ -d "/Applications/OpenClaw.app" ] || { W="$(mktemp -d "${TMPDIR:-/tmp}/openclaw-install.XXXXXX")"; D="$W/OpenClaw-$V.dmg"; M="$W/mount"; curl -fSL -o "$D" "https://github.com/openclaw/openclaw/releases/download/v$V/OpenClaw-$V.dmg" && hdiutil verify "$D" && mkdir -p "$M" && hdiutil attach -readonly -nobrowse -quiet -mountpoint "$M" "$D" && sudo ditto "$M/OpenClaw.app" "/Applications/OpenClaw.app"; S=$?; hdiutil detach -quiet "$M" 2>/dev/null || true; rm -f -- "$D"; rmdir "$M" "$W" 2>/dev/null || true; [ "$S" -eq 0 ]; }; [ -d "/Applications/OpenClaw.app" ] && echo "✅ OpenClaw 安装完成" || echo "❌ 安装失败,请检查上方输出"
+V=2026.8.1; [ -d "/Applications/OpenClaw.app" ] || { W="$(mktemp -d "${TMPDIR:-/tmp}/openclaw-install.XXXXXX")"; D="$W/OpenClaw-$V.dmg"; M="$W/mount"; curl -fSL -o "$D" "https://github.com/openclaw/openclaw/releases/download/v$V/OpenClaw-$V.dmg" && hdiutil verify "$D" && mkdir -p "$M" && hdiutil attach -readonly -nobrowse -quiet -mountpoint "$M" "$D" && sudo ditto "$M/OpenClaw.app" "/Applications/OpenClaw.app"; S=$?; hdiutil detach -quiet "$M" 2>/dev/null || true; rm -f -- "$D"; rmdir "$M" "$W" 2>/dev/null || true; [ "$S" -eq 0 ]; }; [ -d "/Applications/OpenClaw.app" ] && echo "✅ OpenClaw 安装完成" || echo "❌ 安装失败,请检查上方输出"
 
 yes | brew install gh jq uv graphviz
 yes | brew install pandoc
